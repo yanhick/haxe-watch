@@ -2,7 +2,7 @@
 
 #Watches for file change in current directory
 while true; do
-    inotifywait -r -e create -e modify -e delete -e move . && \
+    inotifywait -qq -r -e create -e modify -e delete -e move . && \
         #On each file change, invoke Haxe compiler with arguments passed to script
         haxe $@
 done
